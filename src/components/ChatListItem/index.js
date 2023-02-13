@@ -1,20 +1,19 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 
-const ChatListItem = () => {
+const ChatListItem = ({ chat }) => {
   return (
     <View style={styles.container}>
-      <Image
-        source={{
-          uri: "https://www.sportrx.com/sportrx-blog/wp-content/uploads/2022/03/ray-ban-rb3625-new-aviator-size-58.jpg",
-        }}
-        style={styles.image}
-      />
+      <Image source={{ uri: chat.user.image }} style={styles.image} />
       <View style={styles.content}>
         <View style={styles.row}>
-          <Text numberOfLines={1} style={styles.name}>Aneeq</Text>
-          <Text style={styles.subTitle}>8:30</Text>
+          <Text numberOfLines={1} style={styles.name}>
+            {chat.user.name}
+          </Text>
+          <Text style={styles.subTitle}>{chat.lastMessage.createdAt}</Text>
         </View>
-        <Text numberOfLines={2} style={styles.subTitle}>Hello 😊</Text>
+        <Text numberOfLines={2} style={styles.subTitle}>
+          {chat.lastMessage.text}
+        </Text>
       </View>
     </View>
   );
@@ -36,18 +35,18 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'lightgray'
+    borderBottomColor: "lightgray",
   },
   row: {
     flexDirection: "row",
-    marginBottom: 5
+    marginBottom: 5,
   },
   name: {
     flex: 1,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   subTitle: {
-    color: 'gray'
+    color: "gray",
   },
 });
 
