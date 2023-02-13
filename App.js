@@ -1,19 +1,23 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView } from "react-native";
-import ChatsScreen from "./src/screens/ChatsScreen";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import ChatScreen from "./src/screens/ChatScreen";
+
+
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ChatsScreen />
+    <SafeAreaProvider style={styles.container}>
+      <ChatScreen/>
       <StatusBar style="auto" />
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 40,
     backgroundColor: "#fff",
     justifyContent: "center",
   },
