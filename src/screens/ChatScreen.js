@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     // flex: 1,
   },
   list: {
-    padding: 5,
+    padding: 6,
     marginTop: 10
   },
 });
