@@ -1,24 +1,29 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import ChatScreen from "./src/screens/ChatScreen";
-
-
+import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
+import ChatsScreen from "./src/screens/ChatsScreen";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaProvider style={styles.container}>
-      <ChatScreen/>
-      <StatusBar style="auto" />
-    </SafeAreaProvider>
+    console.log(Platform.OS),
+    (
+      <SafeAreaView style={styles.droidSafeArea}>
+        <View style={styles.container}>
+          <ChatsScreen />
+          <StatusBar style="auto" />
+        </View>
+      </SafeAreaView>
+    )
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 40,
     backgroundColor: "#fff",
-    justifyContent: "center",
+    // justifyContent: "center",
+  },
+  droidSafeArea: {
+    flex: 1,
+    // backgroundColor: "white",
   },
 });
