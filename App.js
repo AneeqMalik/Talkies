@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Platform, StatusBar } from "react-native";
-import ChatsScreen from "./src/screens/ChatsScreen";
+import ChatScreen from "./src/screens/ChatScreen";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
     (
       <SafeAreaView style={styles.droidSafeArea}>
         <View style={styles.container}>
-          <ChatsScreen />
+          <ChatScreen />
           <StatusBar style="auto" />
         </View>
       </SafeAreaView>
